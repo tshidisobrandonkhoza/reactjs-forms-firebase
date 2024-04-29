@@ -19,13 +19,19 @@ class Controlled extends Component {
         })
     }
 
+    submitForm = (event) => {
+        event.preventDefault();
+
+        console.log(this.state);
+    }
+
     render() {
-        console.log(this.state.name)
-        console.log(this.state.lastname)
+        // console.log(this.state.name)
+        // console.log(this.state.lastname)
         return (
             <div className='container'>
 
-                <form>
+                <form onSubmit={this.submitForm}>
                     <div className='form_element'>
                         <label>Enter Name</label>
                         <input
@@ -45,6 +51,7 @@ class Controlled extends Component {
                             value={this.state.lastname}
                         />
                     </div>
+                    <button type='submit'> Submit</button>
                 </form>
 
             </div>
